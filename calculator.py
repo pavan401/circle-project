@@ -26,9 +26,11 @@ if __name__ == "__main__":
     print("Simple Calculator")
     print("Select operation: add, subtract, multiply, divide:")
 
-    operation = input("Enter operation: ").strip().lower()
-    a = float(input("Enter first number: "))
-    b = float(input("Enter second number: "))
+try:
+ operation = input("Enter operation: ").strip().lower()
+except EOFError:
+    print("Input stream closed. Please provide input next time.")
+    exit(1)
 
     if operation == "add":
         print("Result:", add(a, b))

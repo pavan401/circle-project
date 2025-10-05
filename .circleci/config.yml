@@ -20,7 +20,7 @@ jobs:
      - run: echo "Deploying application..."
     
 workflows:
-  build_test:
+  build_test_deploy:
     jobs:
       - build
       - test:

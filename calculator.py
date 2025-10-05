@@ -24,7 +24,7 @@ def divide(a, b):
 
 if __name__ == "__main__":
     print("Simple Calculator")
-    print("Select operation: add, subtract, multiply, divide")
+    print("Select operation: add, subtract, multiply, divide:")
 
     operation = input("Enter operation: ").strip().lower()
     a = float(input("Enter first number: "))

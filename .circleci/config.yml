@@ -13,6 +13,11 @@ jobs:
     steps:
      - checkout
      - run: python test.py
+  deploy:
+    docker:
+      - image: cimg/python:3.9
+    steps:
+     - run: echo "Deploying application..."
     
 workflows:
   build_test:
@@ -21,7 +26,12 @@ workflows:
       - test:
          requires:
              - build
-          
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: main
 
 
    
